@@ -29,7 +29,7 @@ public class Main {
      *
      * @return the List of email body texts
      */
-    private static List<String> getEmailTexts() {
+    public static List<String> getEmailTexts() {
         List<String> BodyTexts = new ArrayList<>();
         BodyTexts.add("Hello,Hello notice this is a legitimate email.");
         BodyTexts.add("URGENT: email You have won a prize! Click here to claim.");
@@ -48,7 +48,7 @@ public class Main {
      * @param emailBodyTexts The List of email body texts
      * @return The map which contains the key as the email body string and List of similarity sum and similar email count
      */
-    private static Map<String,List> scanMails(List<String> emailBodyTexts){
+    public static Map<String,List> scanMails(List<String> emailBodyTexts){
         long bodyTextsLength = emailBodyTexts.size();
         Map<String,List> spamResult = new HashMap<>();
 
@@ -82,7 +82,7 @@ public class Main {
      * @param bodyTwo it's the nearest email body
      * @return The similarity
      */
-    private static double calculateSimilarity(String bodyOne,String bodyTwo){
+    public static double calculateSimilarity(String bodyOne,String bodyTwo){
         List<String> bodyOneWords = new ArrayList<>(Arrays.asList(bodyOne.split("\\W+")));
         List<String> bodyTwoWords = new ArrayList<>(Arrays.asList(bodyTwo.split("\\W+")));
         int matchingWordsCount = 0;
@@ -97,6 +97,8 @@ public class Main {
         return similarity;
 
     }
+
+
 }
 
 
